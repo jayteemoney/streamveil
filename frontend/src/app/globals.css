@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #07070d;
+  --color-bg2: #0b0b16;
+  --color-panel: #11111d;
+  --color-panel2: #15152360;
+  --color-border: #23233a;
+  --color-accent: #7c5cff;
+  --color-accent2: #2dd4bf;
+  --color-accent3: #f472b6;
+  --color-muted: #8a8aa6;
+  --color-text: #ececf5;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  min-height: 100vh;
+  background-image:
+    radial-gradient(70% 55% at 85% -15%, rgba(124, 92, 255, 0.22), transparent 60%),
+    radial-gradient(55% 45% at -5% 5%, rgba(45, 212, 191, 0.14), transparent 60%),
+    radial-gradient(40% 30% at 50% 110%, rgba(244, 114, 182, 0.1), transparent 60%);
+}
+
+/* ---- reusable utilities ---- */
+.container-x {
+  margin-inline: auto;
+  max-width: 80rem;
+  padding-inline: 1.25rem;
+}
+
+.glass {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+  border: 1px solid var(--color-border);
+  backdrop-filter: blur(12px);
+}
+
+.grad-text {
+  background: linear-gradient(100deg, #c4b5fd 0%, #7c5cff 35%, #2dd4bf 75%, #5eead4 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.grad-border {
+  position: relative;
+  background: var(--color-panel);
+  border: 1px solid transparent;
+  background-clip: padding-box;
+}
+.grad-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(124, 92, 255, 0.6), rgba(45, 212, 191, 0.4), transparent 70%);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.glow {
+  box-shadow: 0 0 0 1px rgba(124, 92, 255, 0.15), 0 20px 60px -20px rgba(124, 92, 255, 0.45);
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(124, 92, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124, 92, 255, 0.06) 1px, transparent 1px);
+  background-size: 44px 44px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 75%);
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 75%);
+}
+
+.btn-primary {
+  background: linear-gradient(100deg, var(--color-accent), #6d5cf0);
+  color: white;
+  box-shadow: 0 10px 30px -10px rgba(124, 92, 255, 0.6);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 40px -10px rgba(124, 92, 255, 0.75);
+}
+.btn-primary:disabled {
+  opacity: 0.5;
+}
+
+.btn-ghost {
+  border: 1px solid var(--color-border);
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.btn-ghost:hover {
+  border-color: var(--color-accent);
+  background: rgba(124, 92, 255, 0.08);
+}
+
+/* ---- animations ---- */
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+.animate-pulse-soft { animation: pulse-soft 1.8s ease-in-out infinite; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.animate-float { animation: float 6s ease-in-out infinite; }
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.shimmer {
+  background: linear-gradient(90deg, transparent, rgba(124, 92, 255, 0.25), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2.2s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee { animation: marquee 28s linear infinite; }
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.rise { animation: rise 0.6s ease-out both; }
+
+@keyframes gridflow {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(44px); }
+}

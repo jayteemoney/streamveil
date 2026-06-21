@@ -1,0 +1,1514 @@
+{
+  "chainId": 11155111,
+  "network": "sepolia",
+  "deployedAt": "2026-06-18T11:35:25.745Z",
+  "token": {
+    "address": "0xf98404FF4e1824AB64b244894c66c49cAD048461",
+    "abi": [
+      {
+        "type": "constructor",
+        "stateMutability": "undefined",
+        "payable": false,
+        "inputs": [
+          {
+            "type": "string",
+            "name": "name_"
+          },
+          {
+            "type": "string",
+            "name": "symbol_"
+          },
+          {
+            "type": "string",
+            "name": "tokenURI_"
+          }
+        ]
+      },
+      {
+        "type": "error",
+        "name": "ERC7984InvalidGatewayRequest",
+        "inputs": [
+          {
+            "type": "uint256",
+            "name": "requestId"
+          }
+        ]
+      },
+      {
+        "type": "error",
+        "name": "ERC7984InvalidReceiver",
+        "inputs": [
+          {
+            "type": "address",
+            "name": "receiver"
+          }
+        ]
+      },
+      {
+        "type": "error",
+        "name": "ERC7984InvalidSender",
+        "inputs": [
+          {
+            "type": "address",
+            "name": "sender"
+          }
+        ]
+      },
+      {
+        "type": "error",
+        "name": "ERC7984UnauthorizedCaller",
+        "inputs": [
+          {
+            "type": "address",
+            "name": "caller"
+          }
+        ]
+      },
+      {
+        "type": "error",
+        "name": "ERC7984UnauthorizedSpender",
+        "inputs": [
+          {
+            "type": "address",
+            "name": "holder"
+          },
+          {
+            "type": "address",
+            "name": "spender"
+          }
+        ]
+      },
+      {
+        "type": "error",
+        "name": "ERC7984UnauthorizedUseOfEncryptedAmount",
+        "inputs": [
+          {
+            "type": "bytes32",
+            "name": "amount"
+          },
+          {
+            "type": "address",
+            "name": "user"
+          }
+        ]
+      },
+      {
+        "type": "error",
+        "name": "ERC7984ZeroBalance",
+        "inputs": [
+          {
+            "type": "address",
+            "name": "holder"
+          }
+        ]
+      },
+      {
+        "type": "error",
+        "name": "FaucetCooldownActive",
+        "inputs": [
+          {
+            "type": "uint256",
+            "name": "availableAt"
+          }
+        ]
+      },
+      {
+        "type": "error",
+        "name": "InvalidKMSSignatures",
+        "inputs": []
+      },
+      {
+        "type": "error",
+        "name": "OwnableInvalidOwner",
+        "inputs": [
+          {
+            "type": "address",
+            "name": "owner"
+          }
+        ]
+      },
+      {
+        "type": "error",
+        "name": "OwnableUnauthorizedAccount",
+        "inputs": [
+          {
+            "type": "address",
+            "name": "account"
+          }
+        ]
+      },
+      {
+        "type": "error",
+        "name": "SenderNotAllowedToUseHandle",
+        "inputs": [
+          {
+            "type": "bytes32",
+            "name": "handle"
+          },
+          {
+            "type": "address",
+            "name": "sender"
+          }
+        ]
+      },
+      {
+        "type": "error",
+        "name": "ZamaProtocolUnsupported",
+        "inputs": []
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "AmountDiscloseRequested",
+        "inputs": [
+          {
+            "type": "bytes32",
+            "name": "encryptedAmount",
+            "indexed": true
+          },
+          {
+            "type": "address",
+            "name": "requester",
+            "indexed": true
+          }
+        ]
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "AmountDisclosed",
+        "inputs": [
+          {
+            "type": "bytes32",
+            "name": "encryptedAmount",
+            "indexed": true
+          },
+          {
+            "type": "uint64",
+            "name": "amount",
+            "indexed": false
+          }
+        ]
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "ConfidentialTransfer",
+        "inputs": [
+          {
+            "type": "address",
+            "name": "from",
+            "indexed": true
+          },
+          {
+            "type": "address",
+            "name": "to",
+            "indexed": true
+          },
+          {
+            "type": "bytes32",
+            "name": "amount",
+            "indexed": true
+          }
+        ]
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "FaucetDripped",
+        "inputs": [
+          {
+            "type": "address",
+            "name": "to",
+            "indexed": true
+          }
+        ]
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "OperatorSet",
+        "inputs": [
+          {
+            "type": "address",
+            "name": "holder",
+            "indexed": true
+          },
+          {
+            "type": "address",
+            "name": "operator",
+            "indexed": true
+          },
+          {
+            "type": "uint48",
+            "name": "until",
+            "indexed": false
+          }
+        ]
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "OwnershipTransferred",
+        "inputs": [
+          {
+            "type": "address",
+            "name": "previousOwner",
+            "indexed": true
+          },
+          {
+            "type": "address",
+            "name": "newOwner",
+            "indexed": true
+          }
+        ]
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "PublicDecryptionVerified",
+        "inputs": [
+          {
+            "type": "bytes32[]",
+            "name": "handlesList"
+          },
+          {
+            "type": "bytes",
+            "name": "abiEncodedCleartexts",
+            "indexed": false
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "FAUCET_AMOUNT",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "uint64",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "confidentialBalanceOf",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [
+          {
+            "type": "address",
+            "name": "account"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "bytes32",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "confidentialProtocolId",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "uint256",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "confidentialTotalSupply",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "bytes32",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "confidentialTransfer",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "address",
+            "name": "to"
+          },
+          {
+            "type": "bytes32",
+            "name": "encryptedAmount"
+          },
+          {
+            "type": "bytes",
+            "name": "inputProof"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "bytes32",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "confidentialTransfer",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "address",
+            "name": "to"
+          },
+          {
+            "type": "bytes32",
+            "name": "amount"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "bytes32",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "confidentialTransferAndCall",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "address",
+            "name": "to"
+          },
+          {
+            "type": "bytes32",
+            "name": "amount"
+          },
+          {
+            "type": "bytes",
+            "name": "data"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "bytes32",
+            "name": "transferred"
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "confidentialTransferAndCall",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "address",
+            "name": "to"
+          },
+          {
+            "type": "bytes32",
+            "name": "encryptedAmount"
+          },
+          {
+            "type": "bytes",
+            "name": "inputProof"
+          },
+          {
+            "type": "bytes",
+            "name": "data"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "bytes32",
+            "name": "transferred"
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "confidentialTransferFrom",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "address",
+            "name": "from"
+          },
+          {
+            "type": "address",
+            "name": "to"
+          },
+          {
+            "type": "bytes32",
+            "name": "encryptedAmount"
+          },
+          {
+            "type": "bytes",
+            "name": "inputProof"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "bytes32",
+            "name": "transferred"
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "confidentialTransferFrom",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "address",
+            "name": "from"
+          },
+          {
+            "type": "address",
+            "name": "to"
+          },
+          {
+            "type": "bytes32",
+            "name": "amount"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "bytes32",
+            "name": "transferred"
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "confidentialTransferFromAndCall",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "address",
+            "name": "from"
+          },
+          {
+            "type": "address",
+            "name": "to"
+          },
+          {
+            "type": "bytes32",
+            "name": "encryptedAmount"
+          },
+          {
+            "type": "bytes",
+            "name": "inputProof"
+          },
+          {
+            "type": "bytes",
+            "name": "data"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "bytes32",
+            "name": "transferred"
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "confidentialTransferFromAndCall",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "address",
+            "name": "from"
+          },
+          {
+            "type": "address",
+            "name": "to"
+          },
+          {
+            "type": "bytes32",
+            "name": "amount"
+          },
+          {
+            "type": "bytes",
+            "name": "data"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "bytes32",
+            "name": "transferred"
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "contractURI",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "string",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "decimals",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "uint8",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "discloseEncryptedAmount",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "bytes32",
+            "name": "encryptedAmount"
+          },
+          {
+            "type": "uint64",
+            "name": "cleartextAmount"
+          },
+          {
+            "type": "bytes",
+            "name": "decryptionProof"
+          }
+        ],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "faucet",
+        "constant": false,
+        "payable": false,
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "bytes32",
+            "name": "transferred"
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "faucetCooldown",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "uint256",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "isOperator",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [
+          {
+            "type": "address",
+            "name": "holder"
+          },
+          {
+            "type": "address",
+            "name": "spender"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "bool",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "lastFaucetAt",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [
+          {
+            "type": "address",
+            "name": "account"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "uint256",
+            "name": "timestamp"
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "mint",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "address",
+            "name": "to"
+          },
+          {
+            "type": "bytes32",
+            "name": "encryptedAmount"
+          },
+          {
+            "type": "bytes",
+            "name": "inputProof"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "bytes32",
+            "name": "transferred"
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "name",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "string",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "owner",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "address",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "renounceOwnership",
+        "constant": false,
+        "payable": false,
+        "inputs": [],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "requestDiscloseEncryptedAmount",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "bytes32",
+            "name": "encryptedAmount"
+          }
+        ],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "setFaucetCooldown",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "uint256",
+            "name": "cooldownSeconds"
+          }
+        ],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "setOperator",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "address",
+            "name": "operator"
+          },
+          {
+            "type": "uint48",
+            "name": "until"
+          }
+        ],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "supportsInterface",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [
+          {
+            "type": "bytes4",
+            "name": "interfaceId"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "bool",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "symbol",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "string",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "transferOwnership",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "address",
+            "name": "newOwner"
+          }
+        ],
+        "outputs": []
+      }
+    ]
+  },
+  "streamVeil": {
+    "address": "0x4bb78Acf2696e660100048B728e817850d94f754",
+    "abi": [
+      {
+        "type": "error",
+        "name": "InvalidRecipient",
+        "inputs": []
+      },
+      {
+        "type": "error",
+        "name": "InvalidTimeRange",
+        "inputs": [
+          {
+            "type": "uint64",
+            "name": "startTime"
+          },
+          {
+            "type": "uint64",
+            "name": "stopTime"
+          }
+        ]
+      },
+      {
+        "type": "error",
+        "name": "InvalidToken",
+        "inputs": []
+      },
+      {
+        "type": "error",
+        "name": "NotStreamRecipient",
+        "inputs": [
+          {
+            "type": "uint256",
+            "name": "streamId"
+          }
+        ]
+      },
+      {
+        "type": "error",
+        "name": "NotStreamSender",
+        "inputs": [
+          {
+            "type": "uint256",
+            "name": "streamId"
+          }
+        ]
+      },
+      {
+        "type": "error",
+        "name": "OrganizationNotFound",
+        "inputs": [
+          {
+            "type": "uint256",
+            "name": "orgId"
+          }
+        ]
+      },
+      {
+        "type": "error",
+        "name": "SenderNotAllowedToUseHandle",
+        "inputs": [
+          {
+            "type": "bytes32",
+            "name": "handle"
+          },
+          {
+            "type": "address",
+            "name": "sender"
+          }
+        ]
+      },
+      {
+        "type": "error",
+        "name": "StreamAlreadyCanceled",
+        "inputs": [
+          {
+            "type": "uint256",
+            "name": "streamId"
+          }
+        ]
+      },
+      {
+        "type": "error",
+        "name": "StreamNotActive",
+        "inputs": [
+          {
+            "type": "uint256",
+            "name": "streamId"
+          }
+        ]
+      },
+      {
+        "type": "error",
+        "name": "StreamNotFound",
+        "inputs": [
+          {
+            "type": "uint256",
+            "name": "streamId"
+          }
+        ]
+      },
+      {
+        "type": "error",
+        "name": "StreamNotPaused",
+        "inputs": [
+          {
+            "type": "uint256",
+            "name": "streamId"
+          }
+        ]
+      },
+      {
+        "type": "error",
+        "name": "ZamaProtocolUnsupported",
+        "inputs": []
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "AuditorSet",
+        "inputs": [
+          {
+            "type": "uint256",
+            "name": "streamId",
+            "indexed": true
+          },
+          {
+            "type": "address",
+            "name": "auditor",
+            "indexed": true
+          }
+        ]
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "Claimed",
+        "inputs": [
+          {
+            "type": "uint256",
+            "name": "streamId",
+            "indexed": true
+          },
+          {
+            "type": "address",
+            "name": "recipient",
+            "indexed": true
+          },
+          {
+            "type": "uint64",
+            "name": "atTime",
+            "indexed": false
+          }
+        ]
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "OrganizationRegistered",
+        "inputs": [
+          {
+            "type": "uint256",
+            "name": "orgId",
+            "indexed": true
+          },
+          {
+            "type": "address",
+            "name": "admin",
+            "indexed": true
+          },
+          {
+            "type": "string",
+            "name": "name",
+            "indexed": false
+          }
+        ]
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "StreamCanceled",
+        "inputs": [
+          {
+            "type": "uint256",
+            "name": "streamId",
+            "indexed": true
+          },
+          {
+            "type": "uint64",
+            "name": "atTime",
+            "indexed": false
+          }
+        ]
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "StreamCreated",
+        "inputs": [
+          {
+            "type": "uint256",
+            "name": "streamId",
+            "indexed": true
+          },
+          {
+            "type": "uint256",
+            "name": "orgId",
+            "indexed": true
+          },
+          {
+            "type": "address",
+            "name": "sender",
+            "indexed": true
+          },
+          {
+            "type": "address",
+            "name": "recipient",
+            "indexed": false
+          },
+          {
+            "type": "address",
+            "name": "token",
+            "indexed": false
+          },
+          {
+            "type": "uint64",
+            "name": "startTime",
+            "indexed": false
+          },
+          {
+            "type": "uint64",
+            "name": "stopTime",
+            "indexed": false
+          }
+        ]
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "StreamPaused",
+        "inputs": [
+          {
+            "type": "uint256",
+            "name": "streamId",
+            "indexed": true
+          },
+          {
+            "type": "uint64",
+            "name": "atTime",
+            "indexed": false
+          }
+        ]
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "StreamResumed",
+        "inputs": [
+          {
+            "type": "uint256",
+            "name": "streamId",
+            "indexed": true
+          },
+          {
+            "type": "uint64",
+            "name": "atTime",
+            "indexed": false
+          },
+          {
+            "type": "uint64",
+            "name": "newStopTime",
+            "indexed": false
+          }
+        ]
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "StreamToppedUp",
+        "inputs": [
+          {
+            "type": "uint256",
+            "name": "streamId",
+            "indexed": true
+          },
+          {
+            "type": "uint64",
+            "name": "newStopTime",
+            "indexed": false
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "activeSecondsOf",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [
+          {
+            "type": "uint256",
+            "name": "streamId"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "uint64",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "cancel",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "uint256",
+            "name": "streamId"
+          }
+        ],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "claim",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "uint256",
+            "name": "streamId"
+          }
+        ],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "confidentialProtocolId",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "uint256",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "createStream",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "uint256",
+            "name": "orgId"
+          },
+          {
+            "type": "address",
+            "name": "recipient"
+          },
+          {
+            "type": "address",
+            "name": "token"
+          },
+          {
+            "type": "uint64",
+            "name": "startTime"
+          },
+          {
+            "type": "uint64",
+            "name": "stopTime"
+          },
+          {
+            "type": "bytes32",
+            "name": "encryptedDeposit"
+          },
+          {
+            "type": "bytes",
+            "name": "inputProof"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "uint256",
+            "name": "streamId"
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "getOrganization",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [
+          {
+            "type": "uint256",
+            "name": "orgId"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "tuple",
+            "name": "",
+            "components": [
+              {
+                "type": "uint256",
+                "name": "id"
+              },
+              {
+                "type": "address",
+                "name": "admin"
+              },
+              {
+                "type": "string",
+                "name": "name"
+              },
+              {
+                "type": "uint64",
+                "name": "createdAt"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "getStream",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [
+          {
+            "type": "uint256",
+            "name": "streamId"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "tuple",
+            "name": "",
+            "components": [
+              {
+                "type": "uint256",
+                "name": "id"
+              },
+              {
+                "type": "uint256",
+                "name": "orgId"
+              },
+              {
+                "type": "address",
+                "name": "sender"
+              },
+              {
+                "type": "address",
+                "name": "recipient"
+              },
+              {
+                "type": "address",
+                "name": "token"
+              },
+              {
+                "type": "address",
+                "name": "auditor"
+              },
+              {
+                "type": "uint64",
+                "name": "startTime"
+              },
+              {
+                "type": "uint64",
+                "name": "stopTime"
+              },
+              {
+                "type": "uint64",
+                "name": "activeSeconds"
+              },
+              {
+                "type": "uint8",
+                "name": "status"
+              },
+              {
+                "type": "bytes32",
+                "name": "deposit"
+              },
+              {
+                "type": "bytes32",
+                "name": "rate"
+              },
+              {
+                "type": "bytes32",
+                "name": "claimed"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "orgCount",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "uint256",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "pause",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "uint256",
+            "name": "streamId"
+          }
+        ],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "registerOrganization",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "string",
+            "name": "name"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "uint256",
+            "name": "orgId"
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "resume",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "uint256",
+            "name": "streamId"
+          }
+        ],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "setAuditor",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "uint256",
+            "name": "streamId"
+          },
+          {
+            "type": "address",
+            "name": "auditor"
+          }
+        ],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "streamCount",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "uint256",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "streamsByOrg",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [
+          {
+            "type": "uint256",
+            "name": "orgId"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "uint256[]",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "streamsByRecipient",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [
+          {
+            "type": "address",
+            "name": "account"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "uint256[]",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "streamsBySender",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [
+          {
+            "type": "address",
+            "name": "account"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "uint256[]",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "topUp",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "uint256",
+            "name": "streamId"
+          },
+          {
+            "type": "bytes32",
+            "name": "encryptedAmount"
+          },
+          {
+            "type": "bytes",
+            "name": "inputProof"
+          },
+          {
+            "type": "uint64",
+            "name": "extendSeconds"
+          }
+        ],
+        "outputs": []
+      }
+    ]
+  }
+}
