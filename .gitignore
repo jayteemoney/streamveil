@@ -1,0 +1,34 @@
+# dependencies
+node_modules
+frontend/node_modules
+
+# hardhat / build artifacts
+artifacts
+cache
+types
+dist
+coverage
+coverage.json
+
+# env / secrets
+.env
+.env.local
+frontend/.env.local
+
+# next.js
+frontend/.next
+frontend/out
+
+# fhevm hardhat plugin scratch
+fhevmTemp
+
+# typescript build info
+*.tsbuildinfo
+frontend/next-env.d.ts
+
+# local-only deployment artifacts (Sepolia 11155111 is committed)
+deployments/31337.json
+
+# misc
+.DS_Store
+*.log
