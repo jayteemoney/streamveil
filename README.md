@@ -146,11 +146,20 @@ cd frontend
 npm install
 cp .env.local.example .env.local   # already targets Sepolia (chainId 11155111)
 npm run dev                         # http://localhost:3000
+
+# production build
+npm run build                       # Turbopack (default)
+npm run build:webpack               # fallback: builds with webpack
 ```
 
 > If you previously ran a localhost deploy, restart `npm run dev` after the Sepolia
 > deploy so the new `deployment.json` (chainId 11155111) is picked up. `.env.local`
 > pins the app to Sepolia so the wallet's network gate stays in sync.
+
+> **Build note:** `npm run build` uses Next.js 16's default Turbopack builder. In some
+> restricted/CI sandboxes the Turbopack build worker can stall; if that happens, use
+> `npm run build:webpack`, which compiles with webpack and completes reliably (verified
+> passing — static prerender of `/` and `/_not-found`, TypeScript checks included).
 
 ---
 
