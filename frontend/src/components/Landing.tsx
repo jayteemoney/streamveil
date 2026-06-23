@@ -463,9 +463,10 @@ function Footer() {
               Zama&apos;s Fully Homomorphic Encryption.
             </p>
             <div className="mt-5 flex items-center gap-3">
-              <Social href={REPO} label="GitHub"><IconGithub /></Social>
-              <Social href="https://x.com/zama_fhe" label="X (Twitter)"><IconX /></Social>
-              <Social href="https://community.zama.org" label="Zama community"><IconChat /></Social>
+              <Social href="https://github.com/jayteemoney" label="GitHub"><IconGithub /></Social>
+              <Social href="https://x.com/deev_jaytee" label="X"><IconX /></Social>
+              <Social href="https://www.linkedin.com/in/jethro-irmiya-a2153427b/" label="LinkedIn"><IconLinkedIn /></Social>
+              <Social href="https://t.me/dev_jaytee" label="Telegram"><IconTelegram /></Social>
             </div>
           </div>
 
@@ -556,10 +557,18 @@ function IconX() {
   );
 }
 
-function IconChat() {
+function IconLinkedIn() {
   return (
-    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z" strokeLinecap="round" strokeLinejoin="round" />
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z" />
+    </svg>
+  );
+}
+
+function IconTelegram() {
+  return (
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71l-4.14-3.05-1.99 1.93c-.23.23-.42.42-.83.42Z" />
     </svg>
   );
 }
