@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { ethers } from "ethers";
 import { useQueryClient } from "@tanstack/react-query";
 import { useWallet } from "@/lib/store";
 import { STREAMVEIL_ADDRESS } from "@/lib/contracts";
@@ -19,6 +18,7 @@ import {
 } from "@/lib/stream";
 import * as actions from "@/lib/actions";
 import { TopUpModal } from "./TopUpModal";
+import { AuditorModal } from "./AuditorModal";
 
 const statusColor: Record<StreamStatus, string> = {
   [StreamStatus.Active]: "text-emerald-400 bg-emerald-400/10 border-emerald-400/30",
@@ -32,6 +32,7 @@ export function StreamCard({ stream }: { stream: Stream }) {
   const [now, setNow] = useState(Date.now());
   const [busy, setBusy] = useState<string>("");
   const [showTopUp, setShowTopUp] = useState(false);
+  const [showAuditor, setShowAuditor] = useState(false);
 
   const isSender = address?.toLowerCase() === stream.sender.toLowerCase();
   const isRecipient = address?.toLowerCase() === stream.recipient.toLowerCase();
@@ -163,29 +164,15 @@ export function StreamCard({ stream }: { stream: Stream }) {
           <>
             <Action label="Top up" busyLabel="Top up" active={busy} name="topup" onClick={() => setShowTopUp(true)} />
             <Action label="Cancel" busyLabel="Canceling…" active={busy} name="cancel" onClick={() => run("cancel", async () => actions.cancel(await getSigner(), stream.id), "Stream canceled and unspent funds refunded.")} />
-            <Action
-              label="Add auditor"
-              busyLabel="Saving…"
-              active={busy}
-              name="auditor"
-              onClick={() =>
-                run(
-                  "auditor",
-                  async () => {
-                    const a = window.prompt("Auditor address (can decrypt this stream's amounts):");
-                    if (!a) return;
-                    if (!ethers.isAddress(a)) throw new Error("That auditor address isn't valid.");
-                    return actions.setAuditor(await getSigner(), stream.id, a);
-                  },
-                  "Auditor added — they can now reveal this stream.",
-                )
-              }
-            />
+            <Action label="Add auditor" busyLabel="Add auditor" active={busy} name="auditor" onClick={() => setShowAuditor(true)} />
           </>
         )}
       </div>
 
       {showTopUp && <TopUpModal streamId={stream.id} onClose={() => setShowTopUp(false)} />}
+      {showAuditor && (
+        <AuditorModal streamId={stream.id} currentAuditor={stream.auditor} onClose={() => setShowAuditor(false)} />
+      )}
     </div>
   );
 }
