@@ -10,6 +10,12 @@ This is a from‑scratch fhEVM port of the [StackStream](https://github.com/jayt
 
 ---
 
+## ▶️ Demo video
+
+**[Watch the 2.5-minute demo →](https://www.loom.com/share/49d6dd12489c4ba89f2f2b3d20901071)** — a walkthrough of confidential streaming on Sepolia: encrypting amounts in the browser, the opaque ciphertext on-chain, live accrual, claims, and auditor reveal.
+
+---
+
 ## 🟢 Live on Sepolia (verified)
 
 Both contracts are deployed to the Sepolia testnet and **verified on Etherscan** — click to read the source:
@@ -31,6 +37,7 @@ Run the dApp locally (`cd frontend && npm install && npm run dev`), connect a Se
 | [docs/SOLUTION.md](docs/SOLUTION.md) | The approach + the full technology stack (where Zama fhEVM, ERC‑7984 & the relayer SDK are used) |
 | [docs/IMPACT.md](docs/IMPACT.md) | The gap StreamVeil bridges and what it makes newly possible |
 | [docs/USERGUIDE.md](docs/USERGUIDE.md) | Step‑by‑step walkthrough that doubles as an end‑to‑end test checklist |
+| [docs/EVIDENCE.md](docs/EVIDENCE.md) | Verifiable on‑chain proof — the transaction hash for each function, with what it demonstrates |
 
 ---
 

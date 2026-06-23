@@ -4,6 +4,8 @@ Confidential, real-time payroll streaming on Zama's fhEVM — *hide the salary, 
 
 This folder is the deep-dive companion to the top-level [README](../README.md).
 
+▶️ **[Watch the demo video](https://www.loom.com/share/49d6dd12489c4ba89f2f2b3d20901071)** (2.5 min).
+
 ## Contents
 
 | Document | What's inside |
@@ -12,6 +14,7 @@ This folder is the deep-dive companion to the top-level [README](../README.md).
 | **[SOLUTION.md](./SOLUTION.md)** | The approach and the full technology stack — including exactly where Zama fhEVM, ERC-7984, the relayer SDK, and the rest are used. The key technical decisions live here too. |
 | **[IMPACT.md](./IMPACT.md)** | The gap StreamVeil bridges versus existing approaches, and what it makes newly possible. |
 | **[USERGUIDE.md](./USERGUIDE.md)** | A friendly, step-by-step walkthrough that doubles as an end-to-end test checklist against the live Sepolia deployment. |
+| **[EVIDENCE.md](./EVIDENCE.md)** | Verifiable on-chain proof — the transaction hash for each function on Sepolia, with what each one demonstrates about confidentiality. |
 
 ## Live deployment (Sepolia)
 
