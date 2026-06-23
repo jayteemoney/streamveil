@@ -4,7 +4,7 @@ Confidential, real-time payroll streaming on Zama's fhEVM — *hide the salary, 
 
 This folder is the deep-dive companion to the top-level [README](../README.md).
 
-▶️ **[Watch the demo video](https://www.loom.com/share/49d6dd12489c4ba89f2f2b3d20901071)** (2.5 min).
+🚀 **[Live dApp](https://streamveil-kappa.vercel.app/)** · ▶️ **[Demo video](https://www.loom.com/share/49d6dd12489c4ba89f2f2b3d20901071)** (2.5 min).
 
 ## Contents
 

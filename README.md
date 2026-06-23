@@ -10,9 +10,10 @@ This is a from‑scratch fhEVM port of the [StackStream](https://github.com/jayt
 
 ---
 
-## ▶️ Demo video
+## 🚀 Live demo & video
 
-**[Watch the 2.5-minute demo →](https://www.loom.com/share/49d6dd12489c4ba89f2f2b3d20901071)** — a walkthrough of confidential streaming on Sepolia: encrypting amounts in the browser, the opaque ciphertext on-chain, live accrual, claims, and auditor reveal.
+- **Live dApp:** **[streamveil-kappa.vercel.app](https://streamveil-kappa.vercel.app/)** — connect a Sepolia wallet and use the built-in faucet (no real funds needed).
+- **Demo video:** **[Watch the 2.5-minute walkthrough →](https://www.loom.com/share/49d6dd12489c4ba89f2f2b3d20901071)** — encrypting amounts in the browser, the opaque ciphertext on-chain, live accrual, claims, and auditor reveal.
 
 ---
 

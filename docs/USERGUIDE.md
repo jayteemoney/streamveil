@@ -24,13 +24,13 @@ and the **expected result**. Tick the boxes as you go.
       Add or import a second account for B so you can test the recipient side (claiming).
 - [ ] **Both accounts hold a little Sepolia ETH for gas** (~0.02 each is fine).
       Fund them from a faucet, e.g. https://cloud.google.com/application/web3/faucet/ethereum/sepolia
-- [ ] App running locally:
+- [ ] Use the **live dApp** at **https://streamveil-kappa.vercel.app/**, or run it locally:
       ```bash
       cd frontend
       npm install      # first time only
       npm run dev      # http://localhost:3000
       ```
-- [ ] Open **http://localhost:3000** in the browser where MetaMask lives.
+- [ ] Open the app in the browser where MetaMask lives.
 
 > **What to expect on a live network:** StreamVeil runs real Fully Homomorphic Encryption
 > through Zama's coprocessor on Sepolia. After a transaction confirms, **decryption / "Reveal"
