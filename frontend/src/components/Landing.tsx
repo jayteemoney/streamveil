@@ -443,18 +443,124 @@ function FinalCTA({ onLaunch }: { onLaunch: () => void }) {
 }
 
 /* -------------------------------------------------------------- FOOTER */
+const REPO = "https://github.com/jayteemoney/streamveil";
+const TOKEN_SCAN = "https://sepolia.etherscan.io/address/0xf98404FF4e1824AB64b244894c66c49cAD048461#code";
+const STREAM_SCAN = "https://sepolia.etherscan.io/address/0x4bb78Acf2696e660100048B728e817850d94f754#code";
+
 function Footer() {
   return (
-    <footer className="border-t border-[var(--color-border)]/60">
-      <div className="container-x flex flex-col items-center justify-between gap-4 py-10 text-center text-sm text-[var(--color-muted)] sm:flex-row sm:text-left">
-        <div className="flex items-center gap-2.5">
-          <Logo size={28} />
-          <span className="font-display font-semibold text-white">StreamVeil</span>
+    <footer className="mt-10 border-t border-[var(--color-border)]/60 bg-black/20">
+      <div className="container-x py-14">
+        <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-6">
+          {/* Brand */}
+          <div className="col-span-2 sm:col-span-3 lg:col-span-2">
+            <div className="flex items-center gap-2.5">
+              <Logo size={30} />
+              <span className="font-display text-lg font-bold tracking-tight">StreamVeil</span>
+            </div>
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-[var(--color-muted)]">
+              Real-time, confidential payroll on Ethereum. Hide the salary, not the payday &mdash; powered by
+              Zama&apos;s Fully Homomorphic Encryption.
+            </p>
+            <div className="mt-5 flex items-center gap-3">
+              <Social href={REPO} label="GitHub"><IconGithub /></Social>
+              <Social href="https://x.com/zama_fhe" label="X (Twitter)"><IconX /></Social>
+              <Social href="https://community.zama.org" label="Zama community"><IconChat /></Social>
+            </div>
+          </div>
+
+          <FooterCol title="Product">
+            <FooterLink href="#how">How it works</FooterLink>
+            <FooterLink href="#features">Features</FooterLink>
+            <FooterLink href="#usecases">Use cases</FooterLink>
+            <FooterLink href="#faq">FAQ</FooterLink>
+          </FooterCol>
+
+          <FooterCol title="Developers">
+            <FooterLink href={REPO} external>GitHub repo</FooterLink>
+            <FooterLink href={`${REPO}/tree/main/docs`} external>Documentation</FooterLink>
+            <FooterLink href={STREAM_SCAN} external>StreamVeil contract</FooterLink>
+            <FooterLink href={TOKEN_SCAN} external>svUSD token</FooterLink>
+          </FooterCol>
+
+          <FooterCol title="Zama Protocol" wide>
+            <FooterLink href="https://docs.zama.org/protocol" external>Protocol docs</FooterLink>
+            <FooterLink href="https://docs.zama.org/protocol/solidity-guides" external>fhEVM Solidity guides</FooterLink>
+            <FooterLink href="https://docs.zama.org/protocol/relayer-sdk-guides" external>Relayer SDK guides</FooterLink>
+            <FooterLink href="https://community.zama.org" external>Community forum</FooterLink>
+            <FooterLink href="https://www.zama.org" external>zama.org</FooterLink>
+          </FooterCol>
         </div>
-        <p>Amounts encrypted with Zama fhEVM &mdash; schedule public, money private.</p>
-        <p>Built for the Zama Builder Track · MIT</p>
+
+        <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-[var(--color-border)]/60 pt-6 text-sm text-[var(--color-muted)] sm:flex-row">
+          <p>© {new Date().getFullYear()} StreamVeil · MIT License</p>
+          <p>Built for the Zama Builder Track · Amounts encrypted on-chain with fhEVM</p>
+        </div>
       </div>
     </footer>
+  );
+}
+
+function FooterCol({ title, children, wide }: { title: string; children: React.ReactNode; wide?: boolean }) {
+  return (
+    <div className={wide ? "col-span-2 sm:col-span-1" : ""}>
+      <div className="text-sm font-semibold text-white">{title}</div>
+      <ul className="mt-4 space-y-2.5">{children}</ul>
+    </div>
+  );
+}
+
+function FooterLink({ href, children, external }: { href: string; children: React.ReactNode; external?: boolean }) {
+  return (
+    <li>
+      <a
+        href={href}
+        {...(external ? { target: "_blank", rel: "noreferrer" } : {})}
+        className="text-sm text-[var(--color-muted)] transition hover:text-white"
+      >
+        {children}
+        {external && <span className="ml-1 text-[10px] align-top opacity-60">↗</span>}
+      </a>
+    </li>
+  );
+}
+
+function Social({ href, label, children }: { href: string; label: string; children: React.ReactNode }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      aria-label={label}
+      title={label}
+      className="grid h-9 w-9 place-items-center rounded-lg border border-[var(--color-border)] text-[var(--color-muted)] transition hover:border-[var(--color-accent)] hover:text-white"
+    >
+      {children}
+    </a>
+  );
+}
+
+function IconGithub() {
+  return (
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z" />
+    </svg>
+  );
+}
+
+function IconX() {
+  return (
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.45-6.231Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z" />
+    </svg>
+  );
+}
+
+function IconChat() {
+  return (
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
   );
 }
 
