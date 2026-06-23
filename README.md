@@ -155,18 +155,19 @@ cp .env.local.example .env.local   # already targets Sepolia (chainId 11155111)
 npm run dev                         # http://localhost:3000
 
 # production build
-npm run build                       # Turbopack (default)
-npm run build:webpack               # fallback: builds with webpack
+npm run build                       # webpack — reliable on Vercel/CI (default)
+npm run build:turbopack             # optional: Next 16's Turbopack builder
 ```
 
 > If you previously ran a localhost deploy, restart `npm run dev` after the Sepolia
 > deploy so the new `deployment.json` (chainId 11155111) is picked up. `.env.local`
 > pins the app to Sepolia so the wallet's network gate stays in sync.
 
-> **Build note:** `npm run build` uses Next.js 16's default Turbopack builder. In some
-> restricted/CI sandboxes the Turbopack build worker can stall; if that happens, use
-> `npm run build:webpack`, which compiles with webpack and completes reliably (verified
-> passing — static prerender of `/` and `/_not-found`, TypeScript checks included).
+> **Build note:** `npm run build` uses the **webpack** builder, which compiles reliably on
+> Vercel and CI (verified passing — static prerender of `/` and `/_not-found`, TypeScript
+> checks included). Next 16's default Turbopack production build can hang on this project
+> (the relayer SDK's WebAssembly), so `build:turbopack` is provided only as an opt-in.
+> `next dev` still uses Turbopack and is unaffected.
 
 ---
 
